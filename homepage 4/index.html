@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media - News Feed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo-container">
+                <img src="loogo.png" alt="Logo" class="logo">
+            </div>
+            
+            <form class="search-container" id="searchForm">
+                <input type="text" id="searchInput" placeholder="Search Bar">
+                <button type="submit" class="search-submit">🔍︎</button>
+            </form>
+
+            <div class="menu-wrapper">
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                <label for="menu-toggle" class="menu-btn">☰ Menu Button</label>
+                
+                <ul class="dropdown-menu">
+                    <li><label for="settings-toggle">Settings</label></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Log-out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <header class="welcome-banner">
+            <div class="user-avatar-large"></div>
+            <h1>Welcome!</h1>
+        </header>
+
+        <section class="feed-header">
+            <h2>News feed</h2>
+            <button class="create-post-btn">Create Post</button>
+        </section>
+
+        <div class="feed">
+            <article class="post">
+                <div class="post-header">
+                    <div class="user-avatar-small"></div>
+                    <div class="post-meta">
+                        <p class="user-name"><strong>John Doe</strong></p>
+                        <p class="post-time">2 hours ago</p>
+                    </div>
+                </div>
+                
+                <p class="post-content">Beautiful sunset at the mountains today! 🏔️</p>
+                <div class="post-image"></div>
+                
+                <div class="post-footer">
+                    <div class="like-wrapper">
+                        <input type="checkbox" id="like1" class="like-checkbox">
+                        <label for="like1" class="react-btn">❤︎</label>
+                    </div>
+                    
+                    <div class="comment-trigger-wrapper">
+                        <input type="checkbox" id="modal-toggle" class="modal-checkbox">
+                        <label for="modal-toggle" class="react-btn">🗪</label>
+                    
+                        <div class="modal-overlay">
+                            <div class="modal-box">
+                                <div class="modal-header">
+                                    <span>Comments</span>
+                                    <label for="modal-toggle" class="close-modal">×</label>
+                                </div>
+                                
+                                <div class="comments-list" id="commentsList">
+                                    <div class="comment-item">
+                                        <div class="comment-avatar"></div>
+                                        <div class="comment-bubble">
+                                            <div class="bubble-text">
+                                                <strong>Alice Johnson</strong>
+                                                <p>Wow, absolutely stunning view!</p>
+                                            </div>
+                                            <span class="delete-icon">🗑</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <form class="comment-input-section" id="commentForm">
+                                    <div class="input-header">
+                                        <div class="comment-avatar"></div>
+                                        <strong>Full Name</strong>
+                                    </div>
+                                    <div class="textarea-container">
+                                        <textarea id="commentInput" placeholder="Write a comment..." required></textarea>
+                                        <span class="send-icon-hint">⌯⌲</span>
+                                    </div>
+                                    <div class="input-footer">
+                                        <button type="submit" class="comment-submit-btn">Comment</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0)" class="react-btn">⌯⌲</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <input type="checkbox" id="settings-toggle" class="settings-checkbox">
+    <div class="settings-overlay">
+        <div class="settings-box">
+            <div class="settings-header">
+                <h3>Settings</h3>
+                <label for="settings-toggle" class="close-settings">×</label>
+            </div>
+            <div class="settings-options">
+                <button>Dark Mode/ Light Mode</button>
+                <button>Change Password</button>
+                <button>Change Email</button>
+                <button>Change Name</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Search Logic ---
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            if (query) {
+                alert("Searching for: " + query);
+            }
+        });
+
+        // --- Comment Logic ---
+        const commentForm = document.getElementById('commentForm');
+        const commentsList = document.getElementById('commentsList');
+        const commentInput = document.getElementById('commentInput');
+
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const text = commentInput.value;
+            if (text.trim() === "") return;
+
+            const newComment = document.createElement('div');
+            newComment.className = 'comment-item';
+            newComment.innerHTML = `
+                <div class="comment-avatar"></div>
+                <div class="comment-bubble">
+                    <div class="bubble-text">
+                        <strong>Full Name</strong>
+                        <p>${text}</p>
+                    </div>
+                    <span class="delete-icon">🗑</span>
+                </div>
+            `;
+
+            commentsList.appendChild(newComment);
+            commentInput.value = "";
+        });
+
+        // --- Delete Logic (Event Delegation) ---
+        commentsList.addEventListener('click', function(e) {
+            if (e.target.classList.contains('delete-icon')) {
+                e.target.closest('.comment-item').remove();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <img src="loogo.png" alt="Logo" class="logo-clickable" onclick="location.reload()">
+        <input type="text" placeholder="Search Bar" class="search-bar">
+        <button class="menu-nav-btn" id="menuBtn">Menu Button</button>
+    </header>
+
+    <main class="content">
+        <div class="welcome-row">
+            <button class="profile-btn" onclick="alert('Profile clicked!')"></button>
+            <h1>Welcome!</h1>
+        </div>
+
+        <div class="feed-section">
+            <div class="feed-header">
+                <h2>News feed</h2>
+                <button class="create-post-btn" onclick="alert('Create Post clicked!')">Create Post</button>
+            </div>
+
+            <div class="post-list">
+                <article class="post-card">
+                    <div class="post-header">
+                        <div class="user-meta">
+                            <button class="user-avatar" onclick="alert('View Profile')"></button>
+                            <div>
+                                <strong>Full Name</strong><br>
+                                <small>Publish Date</small>
+                            </div>
+                        </div>
+                        <button class="dots-btn" onclick="alert('Post Options')">•••</button>
+                    </div>
+                    <div class="post-img-box">Post Image</div>
+                    <div class="post-actions">
+                        <button class="react-btn" onclick="alert('Reacted!')">React Button</button>
+                        <button class="comment-trigger" id="commentBtn">Comment Button</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="menuModal">
+        <div class="modal-box dark-bg">
+            <div class="modal-title">
+                <h2>Menu</h2>
+                <button class="close-modal" id="closeMenu">
+                    <span class="X-icon">✕</span><br>Close Button
+                </button>
+            </div>
+            <div class="modal-buttons">
+                <button class="opt-btn" id="settingsBtn">Settings</button>
+                <button class="opt-btn">About Us</button>
+                <button class="opt-btn">Log-out</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal-box dark-bg">
+            <div class="modal-title">
+                <h2>Settings</h2>
+                <button class="close-modal" id="closeSettings">
+                    <span class="X-icon">✕</span><br>Close Button
+                </button>
+            </div>
+            <div class="modal-buttons">
+                <button class="opt-btn">Dark Mode/ Light Mode</button>
+                <button class="opt-btn">Change Password</button>
+                <button class="opt-btn">Change Email</button>
+                <button class="opt-btn">Change Name</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="commentModal">
+        <div class="modal-box dark-bg">
+            <div class="modal-title">
+                <h2>Comments</h2>
+                <button class="close-modal" id="closeComments">
+                    <span class="X-icon">✕</span><br>Close Button
+                </button>
+            </div>
+            <div class="comment-list-scroll">
+                <div class="comment-row">
+                    <div class="c-user"><div class="tiny-pfp"></div>Full Name</div>
+                    <div class="c-bubble">Text Here (Comment)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuMdl = document.getElementById('menuModal');
+        const setMdl = document.getElementById('settingsModal');
+        const comMdl = document.getElementById('commentModal');
+
+        document.getElementById('menuBtn').onclick = () => menuMdl.style.display = 'flex';
+        document.getElementById('settingsBtn').onclick = () => {
+            menuMdl.style.display = 'none';
+            setMdl.style.display = 'flex';
+        };
+        document.getElementById('commentBtn').onclick = () => comMdl.style.display = 'flex';
+
+        document.getElementById('closeMenu').onclick = () => menuMdl.style.display = 'none';
+        document.getElementById('closeSettings').onclick = () => setMdl.style.display = 'none';
+        document.getElementById('closeComments').onclick = () => comMdl.style.display = 'none';
+
+        window.onclick = (e) => {
+            if (e.target.className === 'modal-overlay') {
+                menuMdl.style.display = comMdl.style.display = setMdl.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
