@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    height: 100vh;
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-btn {
+    background-color: #ddd;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #081f37;
+}
+
+.header-btn:hover {
+    background-color: #ccc;
+    color: #666;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    background-color: #b3b3b3;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-card {
+    background-color: #d1d1d1;
+    width: 100%;
+    max-width: 450px;
+    padding: 50px 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.registration-card h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 5px 0;
+    outline: none;
+}
+
+.create-btn {
+    background-color: #ffffff;
+    color: #666;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    float: right;
+}
+
+.create-btn:hover {
+    background-color: #d14d41;
+}
