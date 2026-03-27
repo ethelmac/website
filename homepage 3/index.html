@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Feed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <img src="loogo.png" alt="Logo" class="logo">
+            <form class="search-container" id="searchForm">
+                <input type="text" id="searchInput" placeholder="Search Bar">
+                <button type="submit" class="search-submit">🔍︎</button>
+            </form>
+            <button class="menu-btn">☰ Menu Button</button>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <header class="welcome-banner">
+            <div class="user-avatar-large"></div>
+            <h1>Welcome!</h1>
+        </header>
+
+        <section class="feed-header">
+            <h2>News feed</h2>
+            <button class="create-post-btn">Create Post</button>
+        </section>
+
+        <div class="feed">
+            <article class="post">
+                <div class="post-header">
+                    <div class="user-avatar-small"></div>
+                    <div class="post-meta">
+                        <p class="user-name">John Doe</p>
+                        <p class="post-time">2 hours ago</p>
+                    </div>
+                </div>
+                <p class="post-content">Beautiful sunset at the mountains today! 🏔️</p>
+                <div class="post-image"></div>
+                <div class="post-footer">
+                    <div class="like-wrapper">
+                        <input type="checkbox" id="like1" class="like-checkbox">
+                        <label for="like1" class="react-btn">❤︎</label>
+                    </div>
+                    
+                    <div class="comment-trigger-wrapper">
+                        <input type="checkbox" id="modal-toggle" class="modal-checkbox">
+                        <label for="modal-toggle" class="react-btn">🗪</label>
+                        
+                        <div class="modal-overlay">
+                            <div class="modal-box">
+                                <div class="modal-header">
+                                    <span>Comments</span>
+                                    <label for="modal-toggle" class="close-modal">×</label>
+                                </div>
+                                
+                                <div class="comments-list" id="commentsList">
+                                    <div class="comment-item">
+                                        <div class="comment-avatar"></div>
+                                        <div class="comment-bubble">
+                                            <div class="bubble-text">
+                                                <strong>Alice Johnson</strong>
+                                                <p>Wow, absolutely stunning view!</p>
+                                            </div>
+                                            <span class="delete-icon" onclick="this.closest('.comment-item').remove()">🗑</span>
+                                        </div>
+                                    </div>
+                                    <div class="comment-item">
+                                        <div class="comment-avatar"></div>
+                                        <div class="comment-bubble">
+                                            <div class="bubble-text">
+                                                <strong>Bob Smith</strong>
+                                                <p>This is amazing! Where is this?</p>
+                                            </div>
+                                            <span class="delete-icon" onclick="this.closest('.comment-item').remove()">🗑</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <form class="comment-input-section" id="commentForm">
+                                    <div class="input-header">
+                                        <div class="comment-avatar"></div>
+                                        <strong>Full Name</strong>
+                                    </div>
+                                    <div class="textarea-container">
+                                        <textarea id="commentInput" placeholder="Write a comment..." required></textarea>
+                                        <span class="send-icon-hint">⌯⌲</span>
+                                    </div>
+                                    <div class="input-footer">
+                                        <button type="submit" class="comment-submit-btn">Comment</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0)" class="react-btn">⌯⌲</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script>
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            if (query) {
+                console.log("Searching for:", query);
+                alert("Searching for: " + query);
+            }
+        });
+
+        const commentForm = document.getElementById('commentForm');
+        const commentsList = document.getElementById('commentsList');
+        const commentInput = document.getElementById('commentInput');
+
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const text = commentInput.value;
+            if (text.trim() === "") return;
+
+            const newComment = document.createElement('div');
+            newComment.className = 'comment-item';
+            newComment.innerHTML = `
+                <div class="comment-avatar"></div>
+                <div class="comment-bubble">
+                    <div class="bubble-text">
+                        <strong>Full Name</strong>
+                        <p>${text}</p>
+                    </div>
+                    <span class="delete-icon" onclick="this.closest('.comment-item').remove()">🗑</span>
+                </div>
+            `;
+
+            commentsList.appendChild(newComment);
+            commentInput.value = "";
+        });
+    </script>
+</body>
+</html>
