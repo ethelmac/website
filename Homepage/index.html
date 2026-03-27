@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Feed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <img src="loogo.png" alt="Logo" class="logo">
+            <div class="search-container">
+                <input type="text" placeholder="Search Bar">
+                <a href="javascript:void(0)" class="search-submit">🔍︎</a>
+            </div>
+            <button class="menu-btn">☰ Menu Button</button>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <header class="welcome-banner">
+            <div class="user-avatar-large"></div>
+            <h1>Welcome!</h1>
+        </header>
+
+        <section class="feed-header">
+            <h2>News feed</h2>
+            <button class="create-post-btn">Create Post</button>
+        </section>
+
+        <div class="feed">
+            <article class="post">
+                <div class="post-header">
+                    <div class="user-avatar-small"></div>
+                    <div class="post-meta">
+                        <p class="user-name">John Doe</p>
+                        <p class="post-time">2 hours ago</p>
+                    </div>
+                </div>
+                <p class="post-content">Beautiful sunset at the mountains today! 🏔️</p>
+                <div class="post-image mountain"></div>
+                <div class="post-footer">
+                    <div class="like-wrapper">
+                        <input type="checkbox" id="like1" class="like-checkbox">
+                        <label for="like1" class="react-btn">❤︎</label>
+                    </div>
+                    <a href="javascript:void(0)" class="react-btn">🗪</a>
+                    <a href="javascript:void(0)" class="react-btn">⌯⌲</a>
+                </div>
+            </article>
+
+            <article class="post">
+                <div class="post-header">
+                    <div class="user-avatar-small"></div>
+                    <div class="post-meta">
+                        <p class="user-name">Jane Smith</p>
+                        <p class="post-time">5 hours ago</p>
+                    </div>
+                </div>
+                <p class="post-content">Enjoying this delicious meal at my favorite restaurant! 🍜</p>
+                <div class="post-image food"></div>
+                <div class="post-footer">
+                    <div class="like-wrapper">
+                        <input type="checkbox" id="like2" class="like-checkbox">
+                        <label for="like2" class="react-btn">❤︎</label>
+                    </div>
+                    <a href="javascript:void(0)" class="react-btn">🗪</a>
+                    <a href="javascript:void(0)" class="react-btn">⌯⌲</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+</body>
+</html>
