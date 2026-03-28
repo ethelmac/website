@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Profile Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <img src="loogo.png" alt="Logo" class="logo">
+            <input type="text" class="search-box" placeholder="Search...">
+            <button class="menu-btn">☰ Menu</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <input type="checkbox" id="edit-toggle" class="logic-check">
+
+        <section class="card profile-card">
+            
+            <div class="view-state">
+                <div class="profile-layout">
+                    <img src="https://i.pravatar.cc/150?u=alex" alt="Profile" class="avatar-lg">
+                    <div class="info-body">
+                        <div class="info-top">
+                            <h2>Alex Johnson</h2>
+                            <label for="edit-toggle" class="edit-icon">✎</label>
+                        </div>
+                        <p class="email-text">alex.johnson@email.com</p>
+                        <span class="label-heading">Bio/About me</span>
+                        <p class="bio-text">Digital creator and photography enthusiast. Exploring the world one frame at a time. Based in San Francisco 📍</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edit-state">
+                <div class="profile-layout">
+                    <img src="https://i.pravatar.cc/150?u=alex" alt="Profile" class="avatar-lg">
+                    <div class="form-body">
+                        <div class="input-field">
+                            <label>Name</label>
+                            <input type="text" value="Alex Johnson">
+                        </div>
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="email" value="alex.johnson@email.com">
+                        </div>
+                        <div class="input-field">
+                            <label>Bio/About me</label>
+                            <textarea rows="3">Digital creator and photography enthusiast. Exploring the world one frame at a time. Based in San Francisco 📍</textarea>
+                        </div>
+                        <div class="action-row">
+                            <label for="edit-toggle" class="btn-save">Save</label>
+                            <label for="edit-toggle" class="btn-cancel">Cancel</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p class="section-divider">Posts</p>
+
+        <article class="card post-card">
+            <div class="post-header">
+                <div class="avatar-sm"></div>
+                <div class="post-meta">
+                    <span class="post-user">Alex Johnson</span>
+                    <span class="post-time">5 hours ago</span>
+                </div>
+            </div>
+            
+            <p class="post-caption">Enjoying this delicious meal at my favorite restaurant! 🍜</p>
+            
+            <div class="post-media">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Post Image">
+            </div>
+
+            <div class="post-footer">
+                <div class="like-container">
+                    <input type="checkbox" id="like-post-1" class="logic-check">
+                    <label for="like-post-1" class="footer-icon heart">❤︎</label>
+                </div>
+                <button class="footer-icon">🗪</button>
+                <button class="footer-icon">⌯⌲</button>
+            </div>
+        </article>
+
+    </div>
+
+</body>
+</html>

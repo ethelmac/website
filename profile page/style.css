@@ -1,0 +1,251 @@
+:root {
+    --bg: #f0f2f5;
+    --white: #ffffff;
+    --text: #050505;
+    --muted: #65676b;
+    --blue: #1877f2;
+    --red: #f02849;
+    --border: #dddfe2;
+}
+
+body {
+    font-family: -apple-system, system-ui, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    color: var(--text);
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 12px;
+}
+
+.navbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo { 
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+}
+
+.logo:hover{
+    opacity: 0.8;
+}
+
+.search-box {
+    background: #f0f2f5;
+    border-radius: 20px;
+    padding: 8px 15px;
+    border: none;
+    width: 220px;
+}
+.menu-btn {
+    background: #e4e6eb;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.menu-btn:hover{
+    background-color: #8a8d91;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.logic-check {
+     display: none; 
+}
+
+.view-state { 
+    display: block; 
+}
+
+.edit-state { 
+    display: none; 
+}
+
+#edit-toggle:checked ~ .profile-card .view-state { 
+    display: none; 
+}
+
+#edit-toggle:checked ~ .profile-card .edit-state { 
+    display: block; 
+}
+
+.profile-layout { 
+    display: flex; 
+    gap: 16px; 
+}
+
+.avatar-lg { 
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+.info-top { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.edit-icon { 
+    cursor: pointer; 
+    color: var(--muted); 
+    font-size: 1.2rem; 
+}
+
+.email-text { 
+    color: var(--muted); 
+    margin: 4px 0 10px 0; 
+    font-size: 0.9rem; 
+}
+
+.label-heading { 
+    font-weight: 700; 
+    font-size: 0.85rem; 
+    color: var(--muted); 
+}
+
+.bio-text { 
+    margin-top: 5px; 
+    line-height: 1.4; 
+    font-size: 0.95rem; 
+}
+
+.input-field { 
+    margin-bottom: 12px; 
+}
+
+.input-field label { 
+    display: block; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+    margin-bottom: 4px; 
+}
+
+.input-field input, .input-field textarea {
+    width: 100%; 
+    padding: 8px; 
+    border: 1px solid var(--border); 
+    border-radius: 6px; 
+    box-sizing: border-box;
+}
+
+.action-row { 
+    display: flex; 
+    gap: 10px; 
+    margin-top: 15px; 
+}
+
+.btn-save { 
+    background: var(--blue); 
+    color: white; 
+    padding: 8px 20px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-weight: 600; 
+}
+
+.btn-cancel { 
+    background: #e4e6eb; 
+    padding: 8px 20px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+}
+
+.section-divider { 
+    font-weight: 700; 
+    color: var(--muted); 
+    font-size: 0.9rem; 
+    margin-bottom: 10px; 
+}
+
+.post-header { 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.avatar-sm { 
+    width: 36px; 
+    height: 36px; 
+    border-radius: 50%; 
+    background: #8a8d91; 
+    margin-right: 10px; 
+}
+
+.post-user { 
+    font-weight: 700; 
+    font-size: 0.95rem; 
+    display: block; 
+}
+
+.post-time { 
+    font-size: 0.8rem; 
+    color: var(--muted); 
+}
+
+.post-caption { 
+    margin: 0 0 10px 0; 
+    font-size: 0.95rem; 
+}
+
+.post-media img { 
+    width: 100%; 
+    border-radius: 6px; 
+    display: block; 
+}
+
+.post-footer { 
+    display: flex; 
+    gap: 20px; 
+    padding-top: 12px; 
+    margin-top: 5px; 
+}
+
+.footer-icon {
+    background: none; 
+    border: none; 
+    padding: 0; 
+    cursor: pointer;
+    font-size: 1.4rem; 
+    color: var(--text); 
+    transition: transform 0.1s;
+}
+
+.logic-check:checked + .heart {
+    color: var(--red);
+    font-weight: bold;
+}
+
+.footer-icon:active { 
+    transform: scale(0.9); 
+}
