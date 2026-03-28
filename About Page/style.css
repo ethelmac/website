@@ -1,0 +1,100 @@
+
+.about-page-body {
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-nav {
+    background-color: #f0f0f0;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.search-container-alt {
+    width: 40%;
+    max-width: 400px;
+}
+
+.search-container-alt input {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 25px; 
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    outline: none;
+}
+
+.about-us-btn-nav {
+    background-color: #fff;
+    border: 1px solid #7bb6d6;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.about-us-btn-nav:hover {
+    background-color: #dadada;
+}
+
+.about-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.about-card {
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    padding: 60px 40px;
+    border-radius: 30px; 
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.about-card h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.creators {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.about-text {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 20px;
+    color: #444;
+}
